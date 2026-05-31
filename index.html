@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UTELVT - Sede La Concordia</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+      color:#333;
+    }
+
+    /* HEADER */
+    header{
+      background:#026E1C;
+      color:#fff;
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 8%;
+    }
+
+    .logo{
+      font-size:1.4rem;
+      font-weight:bold;
+    }
+
+    .logo span{
+      color:#FD0802;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#FD0802;
+    }
+
+    /* MENU MOBILE */
+    .menu-toggle{
+      display:none;
+      font-size:28px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      height:100vh;
+      background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+      url('https://moria.aurens.com/organizations/4b66b086-d0ca-4ea6-a875-be5faab3858e/facilities/s6b1zx-IMG_2655.jpeg') center/cover no-repeat;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    .hero-content h1{
+      font-size:3rem;
+      margin-bottom:20px;
+    }
+
+    .hero-content p{
+      font-size:1.2rem;
+      max-width:700px;
+      margin:auto;
+      line-height:1.6;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:25px;
+      padding:14px 30px;
+      background:#FD0802;
+      color:white;
+      text-decoration:none;
+      border-radius:5px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:white;
+      color:#026E1C;
+    }
+
+    section{
+      padding:90px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      color:#026E1C;
+      font-size:2.5rem;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#555;
+    }
+
+    /* QUIENES SOMOS */
+    .about-container{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .about-text p{
+      margin-bottom:20px;
+      line-height:1.8;
+      text-align:justify;
+    }
+
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:10px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom:20px;
+      border-left:6px solid #026E1C;
+    }
+
+    .card h3{
+      color:#FD0802;
+      margin-bottom:10px;
+    }
+
+    /* SERVICIOS */
+    .services{
+      background:#fff;
+    }
+
+    .services-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .service-box{
+      background:#f9f9f9;
+      padding:30px;
+      border-radius:12px;
+      text-align:center;
+      transition:0.3s;
+      border-top:5px solid #026E1C;
+    }
+
+    .service-box:hover{
+      transform:translateY(-8px);
+    }
+
+    .service-box h3{
+      color:#026E1C;
+      margin-bottom:15px;
+    }
+
+    /* GALERIA */
+    .gallery-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .gallery-container img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius:10px;
+      transition:0.4s;
+    }
+
+    .gallery-container img:hover{
+      transform:scale(1.03);
+    }
+
+    /* CONTACTO */
+    .contact-container{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+    }
+
+    form{
+      background:white;
+      padding:30px;
+      border-radius:10px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    form input,
+    form textarea{
+      width:100%;
+      padding:14px;
+      margin-bottom:15px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      outline:none;
+    }
+
+    form button{
+      background:#026E1C;
+      color:white;
+      border:none;
+      padding:14px 30px;
+      cursor:pointer;
+      border-radius:5px;
+      font-size:1rem;
+      transition:0.3s;
+    }
+
+    form button:hover{
+      background:#FD0802;
+    }
+
+    .contact-info{
+      background:white;
+      padding:30px;
+      border-radius:10px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-info h3{
+      color:#026E1C;
+      margin-bottom:20px;
+    }
+
+    .contact-info p{
+      margin-bottom:15px;
+      line-height:1.7;
+    }
+
+    iframe{
+      width:100%;
+      border-radius:10px;
+      margin-top:20px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#026E1C;
+      color:white;
+      text-align:center;
+      padding:20px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+
+      .about-container,
+      .contact-container{
+        grid-template-columns:1fr;
+      }
+
+      nav{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#026E1C;
+        display:none;
+      }
+
+      nav.active{
+        display:block;
+      }
+
+      nav ul{
+        flex-direction:column;
+        text-align:center;
+        padding:20px 0;
+      }
+
+      .menu-toggle{
+        display:block;
+      }
+
+      .hero-content h1{
+        font-size:2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        UTELVT 
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle">
+        ☰
+      </div>
+
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="juego.html">Juego Educativo</a></li>
+          <li><a href="emociones.html">Reconocimiento de emociones</a></li>
+          <li><a href="#galeria">Galería</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- INICIO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>Universidad Técnica Luis Vargas Torres</h1>
+      <p>
+        Sede La Concordia comprometida con la formación académica,
+        profesional y humana de excelencia para contribuir al desarrollo
+        de la sociedad.
+      </p>
+
+      <a href="#quienes" class="btn">Conoce Más</a>
+    </div>
+  </section>
+
+  <!-- QUIENES SOMOS -->
+  <section id="quienes">
+    <div class="section-title">
+      <h2>Quiénes Somos</h2>
+      <p>Conoce más sobre nuestra institución.</p>
+    </div>
+
+    <div class="about-container">
+
+      <div class="about-text">
+        <div class="card">
+          <h3>Historia</h3>
+          <p>
+            La Universidad Técnica Luis Vargas Torres Sede La Concordia
+            es una institución comprometida con la educación superior,
+            enfocada en la formación integral de profesionales capaces de
+            aportar al desarrollo social, económico y cultural del país.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Misión</h3>
+          <p>
+            Formar profesionales competentes, éticos y comprometidos con
+            la investigación, innovación y vinculación con la sociedad.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Visión</h3>
+          <p>
+            Ser una institución líder en educación superior reconocida
+            por su calidad académica y aporte al desarrollo nacional.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <h3>Valores Institucionales</h3>
+          <p>✔ Responsabilidad</p>
+          <p>✔ Ética</p>
+          <p>✔ Compromiso</p>
+          <p>✔ Excelencia Académica</p>
+          <p>✔ Respeto</p>
+          <p>✔ Innovación</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="services" id="servicios">
+
+    <div class="section-title">
+      <h2>Servicios y Áreas</h2>
+      <p>Conoce nuestras principales áreas académicas y servicios.</p>
+    </div>
+
+    <div class="services-container">
+
+      <div class="service-box">
+        <h3>Carreras Universitarias</h3>
+        <p>
+          Formación profesional en diferentes áreas académicas
+          orientadas al desarrollo integral.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h3>Biblioteca</h3>
+        <p>
+          Acceso a recursos académicos y tecnológicos para fortalecer
+          el aprendizaje estudiantil.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h3>Investigación</h3>
+        <p>
+          Impulso de proyectos científicos y tecnológicos enfocados
+          en la innovación.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <h3>Vinculación</h3>
+        <p>
+          Actividades y proyectos en beneficio de la comunidad y el
+          desarrollo social.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria">
+
+    <div class="section-title">
+      <h2>Galería</h2>
+      <p>Espacios e instalaciones de nuestra institución.</p>
+    </div>
+
+    <div class="gallery-container">
+
+      <img src="images/Docentes.jpg" alt="">
+
+      <img src="images/Coliseo.jpg" alt="">
+
+      <img src="images/Salon_de_actos.jpg" alt="">
+
+      <img src="images/universidad.jpeg" alt="">
+
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+
+    <div class="section-title">
+      <h2>Contacto</h2>
+      <p>Comunícate con nosotros.</p>
+    </div>
+
+    <div class="contact-container">
+
+      <form>
+        <input type="text" placeholder="Nombre Completo" required>
+
+        <input type="email" placeholder="Correo Electrónico" required>
+
+        <input type="text" placeholder="Asunto">
+
+        <textarea rows="6" placeholder="Escribe tu mensaje"></textarea>
+
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+
+      <div class="contact-info">
+
+        <h3>Información Institucional</h3>
+
+        <p><strong>Dirección:</strong> La Concordia, Ecuador  km 1 ½  vía a Monterrey</p>
+
+        <p><strong>Teléfono:</strong>  099 5544 189</p>
+
+        <p><strong>Correo:</strong> extlaconcordia@utelvt.edu.ec</p>
+
+       
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3989.8181030195715!2d-79.4059642!3d-0.018911!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902aaa90de3492cd%3A0x8b89921dcf36a3ff!2sUniversidad%20%22Luis%20Vargas%20Torres%22%20Ext.%20La%20Concordia!5e0!3m2!1ses!2sec!4v1779681695391!5m2!1ses!2sec"
+         height="250"
+         allowfullscreen=""
+         loading="lazy"></iframe>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 Universidad Técnica Luis Vargas Torres - Sede La Concordia
+    </p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+  </script>
+<!-- ================= CHATBOT FLOTANTE ================= -->
+
+<style>
+
+/* ================= BOTON FLOTANTE ================= */
+
+.chatbot-button{
+
+  position:fixed;
+
+  bottom:20px;
+  right:20px;
+
+  width:65px;
+  height:65px;
+
+  border-radius:50%;
+
+  background:#026E1C;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  cursor:pointer;
+
+  z-index:9999;
+
+  box-shadow:0 5px 20px rgba(0,0,0,0.25);
+
+  transition:0.3s;
+
+}
+
+.chatbot-button:hover{
+
+  transform:scale(1.08);
+
+  background:#FD0802;
+
+}
+
+.chatbot-button img{
+
+  width:38px;
+  height:38px;
+
+}
+
+
+/* ================= VENTANA CHAT ================= */
+
+.chatbot-window{
+
+  position:fixed;
+
+  bottom:95px;
+  right:20px;
+
+  width:340px;
+  height:500px;
+
+  background:#fff;
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  display:none;
+  flex-direction:column;
+
+  z-index:9999;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+
+  animation:showChat 0.3s ease;
+
+}
+
+
+/* ================= ANIMACION ================= */
+
+@keyframes showChat{
+
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+/* ================= HEADER ================= */
+
+.chatbot-header{
+
+  background:#026E1C;
+
+  color:white;
+
+  padding:14px 16px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+}
+
+.chatbot-header-info{
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+}
+
+.chatbot-header-info img{
+
+  width:42px;
+  height:42px;
+
+  background:white;
+
+  border-radius:50%;
+
+  padding:4px;
+
+}
+
+.chatbot-header h3{
+
+  font-size:16px;
+
+  margin:0;
+
+}
+
+.chatbot-header span{
+
+  font-size:12px;
+
+  opacity:0.9;
+
+}
+
+.chatbot-header button{
+
+  background:none;
+
+  border:none;
+
+  color:white;
+
+  font-size:22px;
+
+  cursor:pointer;
+
+}
+
+
+/* ================= BODY ================= */
+
+.chatbot-body{
+
+  flex:1;
+
+  background:#f5f7fb;
+
+  padding:15px;
+
+  overflow-y:auto;
+
+}
+
+
+/* ================= MENSAJES ================= */
+
+.bot-message,
+.user-message{
+
+  max-width:85%;
+
+  padding:12px 14px;
+
+  margin-bottom:12px;
+
+  border-radius:14px;
+
+  line-height:1.5;
+
+  font-size:14px;
+
+  word-wrap:break-word;
+
+}
+
+.bot-message{
+
+  background:white;
+
+  color:#333;
+
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+
+}
+
+.user-message{
+
+  background:#026E1C;
+
+  color:white;
+
+  margin-left:auto;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+.chatbot-footer{
+
+  display:flex;
+
+  border-top:1px solid #ddd;
+
+  background:white;
+
+}
+
+.chatbot-footer input{
+
+  flex:1;
+
+  border:none;
+
+  outline:none;
+
+  padding:15px;
+
+  font-size:14px;
+
+}
+
+.chatbot-footer button{
+
+  width:60px;
+
+  border:none;
+
+  background:#FD0802;
+
+  color:white;
+
+  font-size:18px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+}
+
+.chatbot-footer button:hover{
+
+  background:#026E1C;
+
+}
+
+
+/* ================= RESPONSIVE TABLET ================= */
+
+@media(max-width:768px){
+
+  .chatbot-window{
+
+    width:320px;
+    height:470px;
+
+    right:15px;
+    bottom:90px;
+
+  }
+
+}
+
+
+/* ================= RESPONSIVE MOVIL ================= */
+
+@media(max-width:480px){
+
+  .chatbot-window{
+
+    width:95%;
+
+    height:75vh;
+
+    right:10px;
+    left:10px;
+
+    bottom:90px;
+
+  }
+
+  .chatbot-button{
+
+    width:60px;
+    height:60px;
+
+    right:15px;
+    bottom:15px;
+
+  }
+
+  .chatbot-button img{
+
+    width:34px;
+    height:34px;
+
+  }
+
+}
+
+</style>
+
+<!-- BOTON -->
+
+<div class="chatbot-button" id="chatbot-button">
+
+  <img
+  src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png"
+  alt="chatbot">
+
+</div>
+
+<!-- CHATBOT -->
+
+<div class="chatbot-window" id="chatbot-window">
+
+  <!-- HEADER -->
+
+  <div class="chatbot-header">
+
+    <div class="chatbot-header-info">
+
+      <img
+      src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png"
+      alt="robot">
+
+      <div>
+
+        <h3>Asistente Virtual UTELVT</h3>
+
+        <span>En línea</span>
+
+      </div>
+
+    </div>
+
+    <button id="close-chatbot">✕</button>
+
+  </div>
+
+  <!-- BODY -->
+
+  <div class="chatbot-body" id="chatbot-body">
+
+    <div class="bot-message">
+
+      👋 Hola, bienvenido a la
+      <strong>Universidad Técnica Luis Vargas Torres</strong>.
+
+      <br><br>
+
+      Puedes preguntarme sobre:
+
+      <br>• Carreras
+      <br>• Horarios
+      <br>• Matrículas
+      <br>• Becas
+      <br>• Servicios
+      <br>• Contacto
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="chatbot-footer">
+
+    <input
+    type="text"
+    id="chat-input"
+    placeholder="Escribe tu pregunta...">
+
+    <button id="send-btn">➤</button>
+
+  </div>
+
+</div>
+
+<!-- ================= JAVASCRIPT CHATBOT ================= -->
+
+<script>
+
+/* ABRIR Y CERRAR CHAT */
+
+const chatbotButton =
+document.getElementById("chatbot-button");
+
+const chatbotWindow =
+document.getElementById("chatbot-window");
+
+const closeChatbot =
+document.getElementById("close-chatbot");
+
+chatbotButton.addEventListener("click", () => {
+
+  chatbotWindow.style.display = "flex";
+
+});
+
+closeChatbot.addEventListener("click", () => {
+
+  chatbotWindow.style.display = "none";
+
+});
+
+
+/* BASE DE CONOCIMIENTO */
+
+const database = [
+
+  {
+
+    keywords:[
+      "hola","holaa","buenas","saludos"
+    ],
+
+    response:
+    "👋 Hola, ¿cómo puedo ayudarte?"
+  },
+
+  {
+
+    keywords:[
+      "carreras","carrera","careras",
+      "facultades","oferta academica"
+    ],
+
+    response:
+    "🎓 La universidad ofrece carreras orientadas al desarrollo profesional y académico."
+  },
+
+  {
+
+    keywords:[
+      "horarios","horario","horaio",
+      "atencion","abren","cierran"
+    ],
+
+    response:
+    "🕒 El horario de atención es de lunes a viernes de 08:00 AM a 05:00 PM."
+  },
+
+  {
+
+    keywords:[
+      "matricula","matriculas",
+      "inscripcion","registro"
+    ],
+
+    response:
+    "📚 Las matrículas se realizan durante los períodos académicos establecidos."
+  },
+
+  {
+
+    keywords:[
+      "becas","ayuda economica",
+      "descuento"
+    ],
+
+    response:
+    "💰 La universidad cuenta con programas de becas y ayudas económicas."
+  },
+
+  {
+
+    keywords:[
+      "servicios","biblioteca",
+      "laboratorios","wifi"
+    ],
+
+    response:
+    "🏫 Contamos con biblioteca, laboratorios, bienestar estudiantil e investigación."
+  },
+
+  {
+
+    keywords:[
+      "direccion","ubicacion",
+      "donde queda"
+    ],
+
+    response:
+    "📍 La UTELVT Sede La Concordia está ubicada en La Concordia km 1½ vía Monterrey."
+  },
+
+  {
+
+    keywords:[
+      "correo","telefono",
+      "contacto","email"
+    ],
+
+    response:
+    "☎ Puedes comunicarte al 099 5544 189 o al correo extlaconcordia@utelvt.edu.ec"
+  }
+
+];
+
+
+/* LIMPIAR TEXTO */
+
+function cleanText(text){
+
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[¿?¡!.,]/g, "")
+    .trim();
+
+}
+
+
+/* IA BASICA */
+
+function generateResponse(message){
+
+  message = cleanText(message);
+
+  let bestResponse = null;
+
+  for(let item of database){
+
+    for(let keyword of item.keywords){
+
+      if(message.includes(keyword)){
+
+        bestResponse = item.response;
+
+      }
+
+    }
+
+  }
+
+  if(bestResponse){
+
+    return bestResponse;
+
+  }
+
+  return `
+    🤖 Lo siento, todavía estoy aprendiendo.
+    <br><br>
+    Puedes preguntarme sobre:
+    <br>• Carreras
+    <br>• Horarios
+    <br>• Matrículas
+    <br>• Becas
+    <br>• Servicios
+    <br>• Contacto
+  `;
+
+}
+
+
+/* ENVIAR MENSAJE */
+
+function sendMessage(){
+
+  const input =
+  document.getElementById("chat-input");
+
+  const body =
+  document.getElementById("chatbot-body");
+
+  const text = input.value.trim();
+
+  if(text === "") return;
+
+  /* MENSAJE USUARIO */
+
+  const userMessage =
+  document.createElement("div");
+
+  userMessage.classList.add("user-message");
+
+  userMessage.innerHTML = text;
+
+  body.appendChild(userMessage);
+
+  /* RESPUESTA BOT */
+
+  setTimeout(() => {
+
+    const botMessage =
+    document.createElement("div");
+
+    botMessage.classList.add("bot-message");
+
+    botMessage.innerHTML =
+    generateResponse(text);
+
+    body.appendChild(botMessage);
+
+    body.scrollTop = body.scrollHeight;
+
+  }, 500);
+
+  input.value = "";
+
+}
+
+
+/* EVENTOS */
+
+document
+.getElementById("send-btn")
+.addEventListener("click", sendMessage);
+
+document
+.getElementById("chat-input")
+.addEventListener("keypress", function(e){
+
+  if(e.key === "Enter"){
+
+    sendMessage();
+
+  }
+
+});
+
+</script>
+</body>
+</html>
