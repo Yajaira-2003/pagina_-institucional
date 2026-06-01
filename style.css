@@ -133,7 +133,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 25px;
+    padding:90px 10%;
     gap: 60px;
 }
 
