@@ -2,7 +2,7 @@
 const datosUniversidad = [
     {
         tipo: "docente",
-        nombre: "IBAÑEZ  JACOME SIXTO SANTIAGO",
+        nombre: "IBANEZ  JACOME SIXTO SANTIAGO",
         materia: "Programación Web",
         aula: "Aula P1",
         edificio: "Edificio de Sistemas",
@@ -29,7 +29,7 @@ const datosUniversidad = [
     },
     {
         tipo: "docente",
-        nombre: "QUÑONEZ  CABEZA BETTY MARIBEL",
+        nombre: "QUNONEZ  CABEZA BETTY MARIBEL",
         materia: "Administracion de centros de computo",
         aula: "Aula P4",
         edificio: "Edificio desistemas",
@@ -47,7 +47,7 @@ const datosUniversidad = [
     },
     {
         tipo: "docente",
-        nombre: "QUIÑONEZ QUINTERO JHONNY MAXIMILIANO",
+        nombre: "QUINONEZ QUINTERO JHONNY MAXIMILIANO",
         materia: "Base de datos I",
         aula: "Aula P6",
         edificio: "Edificio de sistemas",
@@ -128,7 +128,7 @@ const datosUniversidad = [
     },
     {
         tipo: "docente",
-        nombre: "PROAÑO GONZALEZ ESTHER ANGELICA",
+        nombre: "PROANO GONZALEZ ESTHER ANGELICA",
         materia: "Contabilidad financiera",
         aula: "Aula G5",
         edificio: "Edificio de contabilidad",
@@ -324,7 +324,6 @@ function buscarInformacion() {
 
     mostrarResultados(resultadosFiltrados);
 }
-
 
 // Evento del botón buscar
 btnBuscar.addEventListener("click", buscarInformacion);
