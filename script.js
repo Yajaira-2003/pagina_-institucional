@@ -293,24 +293,38 @@ function mostrarResultados(lista) {
 
 // Función de búsqueda
 function buscarInformacion() {
+
     const texto = inputBusqueda.value.toLowerCase().trim();
 
     let resultadosFiltrados = datosUniversidad.filter(item => {
+
+        const nombre = (item.nombre || "").toLowerCase();
+        const materia = (item.materia || "").toLowerCase();
+        const aula = (item.aula || "").toLowerCase();
+        const edificio = (item.edificio || "").toLowerCase();
+        const horario = (item.horario || "").toLowerCase();
+        const correo = (item.correo || "").toLowerCase();
+        const bloque = (item.bloque || "").toLowerCase();
+
         const coincideTexto =
-            item.nombre.toLowerCase().includes(texto) ||
-            item.materia.toLowerCase().includes(texto) ||
-            item.aula.toLowerCase().includes(texto) ||
-            item.edificio.toLowerCase().includes(texto) ||
-            item.horario.toLowerCase().includes(texto);
+            nombre.includes(texto) ||
+            materia.includes(texto) ||
+            aula.includes(texto) ||
+            edificio.includes(texto) ||
+            horario.includes(texto) ||
+            correo.includes(texto) ||
+            bloque.includes(texto);
 
         const coincideFiltro =
-            filtroActual === "todos" || item.tipo === filtroActual;
+            filtroActual === "todos" ||
+            item.tipo === filtroActual;
 
         return coincideTexto && coincideFiltro;
     });
 
     mostrarResultados(resultadosFiltrados);
 }
+
 
 // Evento del botón buscar
 btnBuscar.addEventListener("click", buscarInformacion);
