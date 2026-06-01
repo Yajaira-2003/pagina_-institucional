@@ -24,7 +24,7 @@ body{
     color:#333;
 }
 
-/* HEADER */
+    /* HEADER */
     header{
       background:#026E1C;
       color:#fff;
@@ -74,7 +74,7 @@ body{
       display:none;
       font-size:28px;
       cursor:pointer;
-}
+    }
 
 /* ================= CONTENEDOR ================= */
 
@@ -219,16 +219,12 @@ footer{
     padding:20px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* TABLET */
 
-@media(max-width:768px){
+@media(max-width:900px){
 
-    .title h1{
-        font-size:2.2rem;
-    }
-
-    .result h2{
-        font-size:2rem;
+    .game-area{
+        grid-template-columns:1fr;
     }
 
     nav{
@@ -238,25 +234,105 @@ footer{
         width:100%;
         background:#026E1C;
         display:none;
-      }
+    }
 
-      nav.active{
+    nav.active{
         display:block;
-      }
+    }
 
-      nav ul{
+    nav ul{
         flex-direction:column;
         text-align:center;
         padding:20px 0;
-      }
+    }
 
-      .menu-toggle{
+    .menu-toggle{
         display:block;
-      }
-
+    }
 
 }
 
+/* CELULARES */
+
+@media(max-width:768px){
+
+    .container{
+        width:95%;
+        padding:20px;
+    }
+
+    .title h1{
+        font-size:2rem;
+    }
+
+    .top-info{
+        flex-direction:column;
+    }
+
+    .info-box{
+        min-width:100%;
+    }
+
+    .keyboard{
+        grid-template-columns:repeat(5,1fr);
+    }
+
+    .keyboard button{
+        padding:12px;
+    }
+
+    .letter-box{
+        width:30px;
+        font-size:1.5rem;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+}
+
+/* IPHONE */
+
+@media(max-width:480px){
+
+    .container{
+        width:100%;
+        border-radius:0;
+        padding:15px;
+    }
+
+    .logo{
+        font-size:1.8rem;
+    }
+
+    .title h1{
+        font-size:1.8rem;
+    }
+
+    .keyboard{
+        grid-template-columns:repeat(4,1fr);
+        gap:6px;
+    }
+
+    .keyboard button{
+        padding:10px;
+        font-size:.9rem;
+    }
+
+    .letter-box{
+        width:24px;
+        font-size:1.2rem;
+    }
+
+    h2{
+        font-size:1.4rem;
+    }
+}
+    
 </style>
 
 </head>
@@ -277,7 +353,7 @@ footer{
 
       <nav id="nav-menu">
         <ul>
-          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="index.html">Inicio</a></li>
           <li><a href="juego.html">Juego Educativo</a></li>
           <li><a href="emociones.html">Reconocimiento de emociones</a></li>
           <li><a href="#galeria">Galería</a></li>
