@@ -1,0 +1,667 @@
+/* Reinicio básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Colores institucionales UTLVTE */
+:root {
+    --verde-institucional: #026E1C;
+    --verde-oscuro: #026E1C;
+    --rojo-institucional: #c8102e;
+    --blanco: #ffffff;
+    --gris-claro: #f4f6f8;
+    --gris-medio: #e5e7eb;
+    --gris-texto: #555555;
+    --negro-suave: #1f2933;
+}
+
+/* Estilo general */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--gris-claro);
+    color: var(--negro-suave);
+    line-height: 1.6;
+}
+
+/* Desplazamiento suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Encabezado */
+/* HEADER */
+    header{
+      background:#026E1C;
+      color:#fff;
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 8%;
+    }
+
+    .logo{
+      font-size:1.4rem;
+      font-weight:bold;
+    }
+
+    .logo span{
+      color:#FD0802;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#FD0802;
+    }
+
+    /* MENU MOBILE */
+    .menu-toggle{
+      display:none;
+      font-size:28px;
+      cursor:pointer;
+    }
+
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Menú */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: 500;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 5px;
+}
+
+.menu li a:hover {
+    color: var(--rojo-institucional);
+    border-bottom: 2px solid var(--rojo-institucional);
+}
+
+/* Botón menú móvil */
+.btn-menu {
+    display: none;
+    background: none;
+    color: var(--blanco);
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Sección principal */
+.hero {
+    min-height: 85vh;
+    background: linear-gradient(
+        135deg,
+        #026E1C,
+        var(--verde-oscuro)
+    );
+    color: var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 25px;
+    gap: 60px;
+}
+
+/* Texto principal */
+.hero-text {
+    max-width: 620px;
+}
+
+/* Etiqueta superior */
+.tag {
+    display: inline-block;
+    background-color: var(--rojo-institucional);
+    color: var(--blanco);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Botón principal */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--rojo-institucional);
+    color: var(--blanco);
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: #a80d25;
+}
+
+/* Tarjeta del hero */
+.hero-card {
+    background-color: var(--blanco);
+    color: #026E1C;
+    padding: 35px;
+    border-radius: 22px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+    min-width: 280px;
+    text-align: center;
+    border-top: 7px solid var(--rojo-institucional);
+}
+
+/* Logo dentro de la tarjeta principal */
+.hero-logo {
+    width: 95px;
+    height: 95px;
+    object-fit: contain;
+    background-color: var(--blanco);
+    border-radius: 50%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 3px solid #026E1C;
+}
+
+.hero-card h3 {
+    margin-bottom: 15px;
+    color: #026E1C;
+    font-size: 24px;
+}
+
+.hero-card p {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--gris-medio);
+    color: var(--gris-texto);
+    font-weight: 500;
+}
+
+/* Secciones generales */
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 70px 25px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #026E1C;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    color: var(--gris-texto);
+    margin-bottom: 30px;
+}
+
+/* Caja de búsqueda */
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 60%;
+    padding: 15px;
+    border: 2px solid var(--gris-medio);
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #026E1C;
+    box-shadow: 0 0 0 3px rgba(0, 122, 61, 0.15);
+}
+
+.search-box button {
+    padding: 15px 28px;
+    border: none;
+    border-radius: 12px;
+    background-color: #026E1C;
+    color: var(--blanco);
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #026E1C;
+    transform: translateY(-2px);
+}
+
+/* Filtros */
+.filters {
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: 2px solid #026E1C;
+    background-color: var(--blanco);
+    color: #026E1C;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: #026E1C;
+    color: var(--blanco);
+    transform: translateY(-2px);
+}
+
+/* Contenedor de resultados */
+.results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    text-align: left;
+}
+
+/* Tarjeta de resultado */
+.result-card {
+    background-color: var(--blanco);
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+    border-left: 7px solid var(--rojo-institucional);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.result-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+.result-card h3 {
+    color: #026E1C;
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.result-card p {
+    color: var(--gris-texto);
+    margin-bottom: 8px;
+}
+
+/* Etiqueta de tipo */
+.badge {
+    display: inline-block;
+    background-color: var(--rojo-institucional);
+    color: var(--blanco);
+    padding: 5px 13px;
+    border-radius: 15px;
+    font-size: 13px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* Sección de beneficios */
+.beneficios {
+    background-color: var(--blanco);
+    max-width: 100%;
+}
+
+.benefit-grid {
+    max-width: 1200px;
+    margin: 35px auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.benefit-card {
+    background-color: var(--gris-claro);
+    padding: 30px;
+    border-radius: 18px;
+    border-top: 6px solid #026E1C;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-card h3 {
+    color:#026E1C;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.benefit-card p {
+    color: var(--gris-texto);
+}
+
+/* Sección de contacto */
+.contacto {
+    background-color: var(--gris-claro);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 2px solid var(--gris-medio);
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #026E1C;
+    box-shadow: 0 0 0 3px rgba(0, 122, 61, 0.15);
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    background-color: var(--rojo-institucional);
+    color: var(--blanco);
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #a80d25;
+    transform: translateY(-2px);
+}
+
+/* Pie de página */
+.footer {
+    background-color: #026E1C;
+    color: var(--blanco);
+    text-align: center;
+    padding: 22px;
+    font-size: 14px;
+    border-top: 5px solid var(--rojo-institucional);
+}
+
+/* Diseño responsive para tablets */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    .search-box input {
+        width: 70%;
+    }
+
+    .logo-text p {
+        display: none;
+    }
+}
+
+/* Diseño responsive para celulares */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 12px 18px;
+    }
+
+    .btn-menu {
+        display: block;
+    }
+
+    .logo-img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .logo-text h2 {
+        font-size: 20px;
+    }
+
+    .logo-text p {
+        display: none;
+    }
+
+    .menu {
+        position: absolute;
+        top: 75px;
+        right: 0;
+        background-color: #026E1C;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        display: none;
+        gap: 18px;
+        border-top: 3px solid var(--rojo-institucional);
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .hero {
+        padding: 45px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 31px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .hero-card {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .section {
+        padding: 55px 20px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .results {
+        grid-template-columns: 1fr;
+    }
+}
+/* TABLET */
+
+@media(max-width:900px){
+
+    .game-area{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#026E1C;
+        display:none;
+    }
+
+    nav.active{
+        display:block;
+    }
+
+    nav ul{
+        flex-direction:column;
+        text-align:center;
+        padding:20px 0;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+}
+
+/* CELULARES */
+
+@media(max-width:768px){
+
+    .container{
+        width:95%;
+        padding:20px;
+    }
+
+    .title h1{
+        font-size:2rem;
+    }
+
+    .top-info{
+        flex-direction:column;
+    }
+
+    .info-box{
+        min-width:100%;
+    }
+
+    .keyboard{
+        grid-template-columns:repeat(5,1fr);
+    }
+
+    .keyboard button{
+        padding:12px;
+    }
+
+    .letter-box{
+        width:30px;
+        font-size:1.5rem;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+}
+
+/* IPHONE */
+
+@media(max-width:480px){
+
+    .container{
+        width:100%;
+        border-radius:0;
+        padding:15px;
+    }
+
+    .logo{
+        font-size:1.8rem;
+    }
+
+    .title h1{
+        font-size:1.8rem;
+    }
+
+    .keyboard{
+        grid-template-columns:repeat(4,1fr);
+        gap:6px;
+    }
+
+    .keyboard button{
+        padding:10px;
+        font-size:.9rem;
+    }
+
+    .letter-box{
+        width:24px;
+        font-size:1.2rem;
+    }
+
+    h2{
+        font-size:1.4rem;
+    }
+}

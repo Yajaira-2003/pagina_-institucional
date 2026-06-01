@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Aulas y Docentes</title>
+
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fuente moderna desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Encabezado principal -->
+    <header>
+    <div class="navbar">
+      <div class="logo">
+        UTELVT 
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle">
+        ☰
+      </div>
+
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="juego.html">Juego Educativo</a></li>
+          <li><a href="emociones.html">Reconocimiento de emociones</a></li>
+          <li><a href="buscador.html">Buscador</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <!-- Sección de inicio -->
+    <section class="hero" id="inicio">
+        <div class="hero-text">
+            <h1>Buscador inteligente de aulas y docentes</h1>
+            <p>
+                Encuentra rápidamente docentes, materias, aulas, edificios y horarios 
+                dentro de la universidad desde cualquier dispositivo.
+            </p>
+            <a href="#buscador" class="btn-primary">Buscar ahora</a>
+        </div>
+
+        <div class="hero-card">
+            <h3>Consulta rápida</h3>
+            <p>Docentes</p>
+            <p>Aulas</p>
+            <p>Materias</p>
+            <p>Horarios</p>
+        </div>
+    </section>
+
+    <!-- Sección del buscador -->
+    <section class="section" id="buscador">
+        <h2>Buscar aulas y docentes</h2>
+        <p class="section-description">
+            Ingresa el nombre del docente, materia, aula o edificio.
+        </p>
+
+        <div class="search-box">
+            <input 
+                type="text" 
+                id="inputBusqueda" 
+                placeholder="Ejemplo: Programación, Aula 204, Ing. Ramírez..."
+            >
+            <button id="btnBuscar">Buscar</button>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="todos">Todos</button>
+            <button class="filter-btn" data-filter="docente">Docentes</button>
+            <button class="filter-btn" data-filter="aula">Aulas</button>
+        </div>
+
+        <!-- Aquí aparecen los resultados -->
+        <div class="results" id="resultados"></div>
+    </section>
+
+    <!-- Sección de beneficios -->
+    <section class="section beneficios" id="beneficios">
+        <h2>Beneficios para los estudiantes</h2>
+
+        <div class="benefit-grid">
+            <div class="benefit-card">
+                <h3>Ahorro de tiempo</h3>
+                <p>Permite encontrar aulas y docentes sin preguntar en varias oficinas.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>Mejor orientación</h3>
+                <p>Ayuda especialmente a estudiantes nuevos que no conocen el campus.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3>Información organizada</h3>
+                <p>Centraliza datos de docentes, horarios, materias y ubicaciones.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de contacto -->
+    <section class="section contacto" id="contacto">
+        <h2>Contacto académico</h2>
+        <p>
+            Para actualizar información de docentes o aulas, comunícate con la coordinación académica.
+        </p>
+        <form class="contact-form">
+            <input type="text" placeholder="Nombre del estudiante">
+            <input type="email" placeholder="Correo institucional">
+            <textarea placeholder="Mensaje o sugerencia"></textarea>
+            <button type="button">Enviar sugerencia</button>
+        </form>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p>© 2026 UniGuía - Sistema académico para estudiantes universitarios</p>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
