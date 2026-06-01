@@ -346,6 +346,13 @@ botonesFiltro.forEach(boton => {
     });
 });
 
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
 // Menú responsive para celular
 btnMenu.addEventListener("click", () => {
     menu.classList.toggle("show");
@@ -360,12 +367,7 @@ enlacesMenu.forEach(enlace => {
     });
 });
 
-const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.getElementById('nav-menu');
 
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
 
 
 
