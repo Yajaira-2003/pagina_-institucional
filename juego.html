@@ -274,30 +274,35 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .menu-toggle{
+        display:block;
+        font-size:32px;
+        cursor:pointer;
+    }
+
     nav{
-        position:absolute;
+        position:fixed;
         top:70px;
         left:0;
         width:100%;
         background:#026E1C;
         max-height:0;
         overflow:hidden;
-        transition:.4s;
+        transition:all .4s ease;
+        z-index:9999;
     }
 
     nav.active{
-    max-height:100vh;
-    height:calc(100vh - 70px);
+        max-height:500px;
     }
 
     nav ul{
-    justify-content:center;
-    align-items:center;
-    gap:40px;
-    }
-
-    .menu-toggle{
-        display:block;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:25px;
+        padding:25px 0;
     }
 }
 
@@ -752,14 +757,27 @@ function disableKeyboard(){
 
 newGame();
  
-const menuToggle = document.getElementById("menu-toggle");
-const navMenu = document.getElementById("nav-menu");
+document.addEventListener("DOMContentLoaded", function(){
 
-menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
+    const menuToggle =
+    document.getElementById("menu-toggle");
+
+    const navMenu =
+    document.getElementById("nav-menu");
+
+    if(menuToggle && navMenu){
+
+        menuToggle.addEventListener("click", function(){
+
+            navMenu.classList.toggle("active");
+
+        });
+
+    }
+
 });
 
 </script>
-+
+
 </body>
 </html>
